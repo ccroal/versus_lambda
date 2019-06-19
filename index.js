@@ -8,7 +8,9 @@ api.get('/', function (req) {
       try{
             const {API_KEY} = process.env;
 
-            const url = `https://apifootball.com/api/?APIkey=${API_KEY}&`
+            const { action } = req.queryString;
+
+            const url = `https://apiv2.apifootball.com/?action=${action}&APIkey=${API_KEY}`;
 
             axios
 
