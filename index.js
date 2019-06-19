@@ -2,14 +2,13 @@ const ApiBuilder = require('claudia-api-builder'),
 AWS = require('aws-sdk');
 const api = new ApiBuilder();
 const axios = require('axios');
-dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 api.get('/', function (req) {
     return new Promise((resolve, resject) => {
       try{
             const {API_KEY} = process.env;
 
-            const url = `https://apifootball.com/api/?APIkey=${API_KEY}`
+            const url = `https://apifootball.com/api/?APIkey=${API_KEY}&`
 
             axios
 
